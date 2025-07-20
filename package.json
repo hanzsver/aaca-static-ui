@@ -1,0 +1,27 @@
+{
+  "name": "aaca-static-ui",
+  "version": "1.0.0",
+  "description": "HTML, CSS, JavaScript를 사용한 컴포넌트화를 최소화한 정적 웹사이트입니다.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write \"**/*.{html,css,js,json}\"",
+    "format:check": "prettier --check \"**/*.{html,css,js,json}\"",
+    "format:html": "prettier --write \"*.html\"",
+    "format:css": "prettier --write \"css/*.css\"",
+    "format:js": "prettier --write \"js/*.js\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^3.6.2"
+  },
+  "prettier": {
+    "semi": true,
+    "trailingComma": "es5",
+    "singleQuote": false,
+    "printWidth": 80,
+    "tabWidth": 2
+  }
+}

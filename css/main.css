@@ -1,0 +1,43 @@
+@import url("./reset.css");
+@import url("./variables.css");
+@import url("./layout.css");
+@import url("./button.css");
+
+html {
+  min-height: 100%;
+  font-size: 16px;
+  overflow-y: auto;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  font-family: var(--font-pretendard);
+  font-feature-settings: normal;
+  font-variation-settings: normal;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizelegibility;
+  font-synthesis: none;
+  line-height: inherit;
+}
+
+.app {
+  display: block;
+  unicode-bidi: isolate;
+}
+
+.main {
+  isolation: isolate;
+  height: calc(100dvh - var(--header-height));
+  display: flex;
+}
+
+/* 폰트 로딩 최적화 */
+@media screen {
+  body {
+    font-display: swap;
+  }
+}
