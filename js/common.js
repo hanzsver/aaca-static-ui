@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   initRightpannel__inner();
+  initAutoResizeTextarea();
 });
 
 function initRightpannel__inner() {
@@ -73,5 +74,45 @@ function initSQLEditor() {
         editBtn.title = "완료";
       }
     });
+  }
+}
+
+function initAutoResizeTextarea() {
+  const textarea = document.querySelector(".chat-input__input > textarea");
+
+  if (textarea) {
+    // 자동 높이 조정 함수
+    function autoResize() {
+      // 높이를 초기화하여 정확한 scrollHeight를 얻음
+      textarea.style.height = "auto";
+
+      // 최소/최대 높이 계산
+      const minHeight = 24; // min-height와 동일
+      const maxHeight = 320; // max-height와 동일
+      const scrollHeight = textarea.scrollHeight;
+
+      // 새 높이 계산 (최소/최대 범위 내에서)
+      const newHeight = Math.min(Math.max(scrollHeight, minHeight), maxHeight);
+
+      // 높이 적용
+      textarea.style.height = newHeight + "px";
+
+      // 최대 높이에 도달했을 때만 스크롤 표시
+      if (scrollHeight > maxHeight) {
+        textarea.style.overflowY = "auto";
+      } else {
+        textarea.style.overflowY = "hidden";
+      }
+    }
+
+    // 이벤트 리스너 추가
+    textarea.addEventListener("input", autoResize);
+    textarea.addEventListener("paste", function () {
+      // paste 이벤트는 약간의 지연 후 처리
+      setTimeout(autoResize, 10);
+    });
+
+    // 초기 높이 설정
+    autoResize();
   }
 }

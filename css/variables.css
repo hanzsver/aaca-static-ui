@@ -24,6 +24,13 @@
 }
 
 :root {
+  /* Textfield */
+  --textfield-border-color: #e0e0e0;
+  --textfield-font-color: #1a1a1a;
+  --textfield-placeholder-color: #aaaaaa;
+}
+
+:root {
   /* ETC */
   --disabled-opacity: 0.5;
 }
