@@ -470,6 +470,86 @@
   opacity: 1;
 }
 
+.chat-container__context-recommand-title {
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.chat-container__context-recommand li {
+  display: flex;
+  align-items: center;
+  min-height: 36px;
+  transition: all 0.15s ease;
+}
+
+.chat-container__context-recommand li + li{
+  border-top: 1px solid #f2f2f2;
+}
+
+.chat-container__context-recommand li button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  padding: 6px 10px;
+  color: #555555;
+}
+
+.chat-container__context-recommand li:hover,
+.chat-container__context-chart button:hover {
+  background-color: #f1f5f9;
+}
+
+.chat-container__context-chart {
+  display: flex;
+  width: 100%;
+  gap: 30px;
+}
+
+.chat-container__context-chart button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 10px 30px;
+  border: 1px solid #b8b5b5;
+  border-radius: 60px;
+  transition: all 0.15s ease;
+  font-size: 13px;
+  font-weight: 600;
+  color: #595858;
+}
+
+.image-wrap {
+  position: relative;
+}
+
+.image-btn {
+  width: 20px;
+  height: 20px;
+  opacity: 0;
+}
+
+.image-wrap .image-btn-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+  width: 100%;
+  padding: 4px 6px;
+}
+
+.image-wrap:hover .image-btn-overlay {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), transparent);
+}
+
+.image-wrap:hover .image-btn {
+  opacity: 1;
+  transition: all 0.15s ease;
+}
+
 .action-btn {
   display: flex;
   align-items: center;
@@ -494,6 +574,24 @@
   height: 16px;
 }
 
+.file {
+  display: flex;
+  margin-bottom: 6px;
+  text-align: left;
+  word-break: break-all;
+}
+
+.file span {
+  display: inline-flex;
+  flex: 1;
+  font-size: 12px;
+  line-height: 20px;
+  color: #2964AA;
+}
+
+.file span:hover {
+  text-decoration: underline;
+}
 /* ========================================
   Chat Input
 ======================================== */
@@ -680,6 +778,11 @@
 
 .sidebar__workspace-menu li:hover {
   background-color: rgba(235, 97, 41, 0.125);
+}
+
+.sidebar__workspace-menu li.is-selected {
+  background-color: #EB6129;
+  color: white;
 }
 
 .sidebar__workspace-menu li span {
