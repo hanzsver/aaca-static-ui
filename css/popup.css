@@ -1,0 +1,121 @@
+:root {
+  --color-dim: rgba(0, 0, 0, 0.6);
+  --color-primary: #ef4500;
+  --color-white: #ffffff;
+  --color-gray-90: #333333;
+
+  --color-border: #e4e4e4;
+
+  --popup-header-height: 57px;
+  --popup-nav-width: 175px;
+  --popup-nav-selected-color: #dfe3e9;
+}
+
+/* 팝업 등장 애니메이션 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* style */
+.popup-overlay {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-dim);
+  z-index: 1000;
+}
+
+/* 팝업 박스 */
+.popup {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  width: 400px;
+  max-width: 90%;
+  max-height: 80%;
+  background: var(--color-white);
+  border-radius: 8px;
+  animation: fadeIn 0.3s ease;
+}
+
+/* 팝업 헤더 */
+.popup-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--popup-header-height);
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--color-border);
+}
+.popup-header__title {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-gray-90);
+}
+
+/* 팝업 컨텐츠 */
+.popup-content {
+  display: flex;
+  flex: 1;
+  height: calc(100% - var(--popup-header-height));
+}
+
+/* 팝업 컨텐츠 네비 */
+.popup-content__nav {
+  width: var(--popup-nav-width);
+  height: auto;
+  padding: 10px;
+  border-right: 1px solid var(--color-border);
+}
+.popup-content__nav-item {
+  padding: 6px 8px;
+  background: var(--color-white);
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.popup-content__nav-item--active {
+  background: var(--popup-nav-selected-color);
+}
+
+/* 팝업 컨텐츠 메인 */
+.popup-content__main {
+  display: flex;
+  flex-flow: column;
+  flex: 1;
+}
+
+/* 팝업 컨텐츠 바디 */
+.popup-content__body {
+  overflow-y: auto;
+  height: 100%;
+  padding: 20px;
+}
+
+/* 팝업 컨텐츠 풋터 */
+.popup-content__footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 20px;
+}
+
+/* 관리자 팝업 */
+.admin-popup {
+  min-width: 1400px;
+  height: 843px;
+}
