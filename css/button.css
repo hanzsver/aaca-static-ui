@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 5px;
   line-height: 14px;
   padding: 0 15px;
   border: 1px solid transparent;
@@ -17,15 +18,15 @@
 }
 
 .btn--sm {
-  height: 24px;
+  height: var(--form-height-sm);
 }
 
 .btn--md {
-  height: 26px;
+  height: var(--form-height-md);
 }
 
 .btn--lg {
-  height: 30px;
+  height: var(--form-height-lg);
 }
 
 .btn--primary {

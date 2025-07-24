@@ -432,6 +432,18 @@
   height: 100%;
 }
 
+.chat-container__intro-title {
+  margin-top: 14px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.chat-container__intro-desc {
+  margin: 4px 0 30px;
+  font-size: 14px;
+  color: #3a3a3a;
+}
+
 .chat-container__intro-list {
   overflow-y: auto;
   display: flex;
@@ -879,11 +891,6 @@
 
 .sidebar__workspace-menu li:hover {
   background-color: rgba(235, 97, 41, 0.125);
-}
-
-.sidebar__workspace-menu li.is-selected {
-  background-color: #eb6129;
-  color: white;
 }
 
 .sidebar__workspace-menu li span {
