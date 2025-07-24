@@ -157,6 +157,14 @@
   overflow: hidden;
 }
 
+.sidebar__menu li.is-active {
+  background-color: rgba(235, 97, 41);
+  color: #fff;
+}
+
+.sidebar__menu li.is-active svg path {
+  fill: #fff;
+}
 .sidebar__subtitle {
   flex-shrink: 0;
   display: flex;
@@ -1063,6 +1071,33 @@
   background-color: #f8fafc;
 }
 
+/* Chat Execution Status */
+.chat-execution-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1.3;
+  margin-bottom: 16px;
+  padding: 12px 16px;
+  background-color: #fdf0f0;
+  border: 1px solid #f7bbbb;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #651616;
+}
+
+.status-icon.fail {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background-color: #c52222;
+  color: var(--color-white);
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: bold;
+}
 /* SQL Execution Status */
 .sql-execution-status {
   display: flex;

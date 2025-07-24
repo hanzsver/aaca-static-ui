@@ -8,6 +8,7 @@
     <!-- jsdelivr CDN 서버에 미리 연결하여 리소스 로딩을 빠르게 함 -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" />
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/chat.css" />
   </head>
   <body>
     <div class="app">
@@ -47,7 +48,7 @@
         </div>
       </header>
 
-      <main class="main">
+      <main class="main pannel-open">
         <!-- Sidebar -->
         <aside class="sidebar">
           <nav class="sidebar__agent">
@@ -160,7 +161,7 @@
                 </button>
               </div>
               <ul class="sidebar__menu">
-                <li>
+                <li class="is-active">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="14"
@@ -302,6 +303,21 @@
                         fill="#0F172A"
                       />
                     </svg>
+                    <span>새로운 채팅</span>
+                  </li>
+                  <li>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="15"
+                      viewBox="0 0 14 15"
+                      fill="none"
+                    >
+                      <path
+                        d="M2.33268 12.1666C2.01185 12.1666 1.7372 12.0524 1.50872 11.8239C1.28025 11.5955 1.16602 11.3208 1.16602 11V3.99998C1.16602 3.67915 1.28025 3.40449 1.50872 3.17602C1.7372 2.94755 2.01185 2.83331 2.33268 2.83331H11.666C11.9868 2.83331 12.2615 2.94755 12.49 3.17602C12.7184 3.40449 12.8327 3.67915 12.8327 3.99998V11C12.8327 11.3208 12.7184 11.5955 12.49 11.8239C12.2615 12.0524 11.9868 12.1666 11.666 12.1666H2.33268ZM6.99935 8.08331L2.33268 5.16665V11H11.666V5.16665L6.99935 8.08331ZM6.99935 6.91665L11.666 3.99998H2.33268L6.99935 6.91665ZM2.33268 5.16665V3.99998V11V5.16665Z"
+                        fill="#0F172A"
+                      />
+                    </svg>
                     <span>6월 28일 이메일 내용 요약</span>
                   </li>
                   <li>
@@ -428,7 +444,135 @@
           <div class="chat-container">
             <div class="chat-container__history">
               <!-- 일반적인 질의 -->
+
+              <!-- User CHAT Execution Request -->
+              <div class="chat-container__bubble--user">
+                <div class="chat-container__bubble-header">
+                  <span>You</span>
+                </div>
+                <div class="chat-container__bubble-content">
+                  <p>7월 29일에 킥오프 회식 장소 어디야?</p>
+                  <div class="message-actions">
+                    <button class="action-btn copy-btn" title="복사">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                      >
+                        <path
+                          d="M13.5 2.5H6.5C5.94772 2.5 5.5 2.94772 5.5 3.5V4.5H4.5C3.94772 4.5 3.5 4.94772 3.5 5.5V12.5C3.5 13.0523 3.94772 13.5 4.5 13.5H11.5C12.0523 13.5 12.5 13.0523 12.5 12.5V11.5H13.5C14.0523 11.5 14.5 11.0523 14.5 10.5V3.5C14.5 2.94772 14.0523 2.5 13.5 2.5Z"
+                          stroke="currentColor"
+                          stroke-width="1.5"
+                          fill="none"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- AI Chat Execution Result -->
+              <div class="chat-container__bubble--asst">
+                <div class="chat-container__bubble-header">
+                  <span>Claude Sonnet 4</span>
+                </div>
+                <div class="chat-container__bubble-content">
+                  <div class="chat-execution-status">
+                    <span class="status-icon fail">✓</span>
+                    <span
+                      >현재 입력하신 내용에 대해 적절한 답변을 제공할 수
+                      없습니다. <br />
+                      질문을 구체적으로 다시 입력하시거나, 관련 기능을 이용해
+                      주세요.</span
+                    >
+                  </div>
+                  <div class="message-actions">
+                    <button class="action-btn copy-btn" title="복사">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                      >
+                        <path
+                          d="M13.5 2.5H6.5C5.94772 2.5 5.5 2.94772 5.5 3.5V4.5H4.5C3.94772 4.5 3.5 4.94772 3.5 5.5V12.5C3.5 13.0523 3.94772 13.5 4.5 13.5H11.5C12.0523 13.5 12.5 13.0523 12.5 12.5V11.5H13.5C14.0523 11.5 14.5 11.0523 14.5 10.5V3.5C14.5 2.94772 14.0523 2.5 13.5 2.5Z"
+                          stroke="currentColor"
+                          stroke-width="1.5"
+                          fill="none"
+                        />
+                      </svg>
+                    </button>
+                    <button class="action-btn thumbs-up-btn" title="좋아요">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                      >
+                        <path
+                          d="M8.5 2.5C8.5 2.5 10 1 12 3.5C12 3.5 13.5 5 13.5 7.5C13.5 10 12 11.5 8.5 11.5H5.5C4.94772 11.5 4.5 11.0523 4.5 10.5V6.5C4.5 5.94772 4.94772 5.5 5.5 5.5H8.5V2.5Z"
+                          stroke="currentColor"
+                          stroke-width="1.5"
+                          fill="none"
+                        />
+                      </svg>
+                    </button>
+                    <button class="action-btn thumbs-down-btn" title="싫어요">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                      >
+                        <path
+                          d="M7.5 13.5C7.5 13.5 6 15 4 12.5C4 12.5 2.5 11 2.5 8.5C2.5 6 4 4.5 7.5 4.5H10.5C11.0523 4.5 11.5 4.94772 11.5 5.5V9.5C11.5 10.0523 11.0523 10.5 10.5 10.5H7.5V13.5Z"
+                          stroke="currentColor"
+                          stroke-width="1.5"
+                          fill="none"
+                        />
+                      </svg>
+                    </button>
+                    <button class="action-btn refresh-btn" title="새로고침">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                      >
+                        <path
+                          d="M13.5 8C13.5 11.0376 11.0376 13.5 8 13.5C4.96243 13.5 2.5 11.0376 2.5 8C2.5 4.96243 4.96243 2.5 8 2.5C9.5 2.5 10.8 3.2 11.7 4.3M11.5 2.5V4.5H9.5"
+                          stroke="currentColor"
+                          stroke-width="1.5"
+                          fill="none"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
               <!-- 컨텍스트 제공 -->
+              <div class="chat-container__context-recommand">
+                <p class="chat-container__context-recommand-title">추천 기능</p>
+                <button type="button" class="btn btn--lg btn--tertiary">
+                  <svg
+                    width="14"
+                    height="12"
+                    viewBox="0 0 14 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M9.33333 0.555542L8.23667 1.65221L9.33333 2.75665L11.0211 4.44443H3.88889C1.74222 4.44443 0 6.18665 0 8.33332V11.4444H1.55556V8.33332C1.55556 7.04999 2.60556 5.99999 3.88889 5.99999H11.0211L9.33333 7.68776L8.23667 8.78443L9.33333 9.88888L14 5.22221L9.33333 0.555542Z"
+                      fill="black"
+                    />
+                  </svg>
+                  <span style="display: inline-block; margin-left: 5px">
+                    캘린더 바로가기
+                  </span>
+                </button>
+              </div>
             </div>
 
             <div class="chat-input">
@@ -488,20 +632,339 @@
         </div>
 
         <!-- Right Pannel -->
-        <div class="pannel">
+        <div class="pannel mail-pannel">
           <div class="pannel__inner">
             <div class="pannel__inner-header">
               <button type="button" class="btn btn--sm btn--primary">
-                Save
+                Email
               </button>
               <button type="button" class="btn btn--sm btn--tertiary">
-                Reset
+                Setting
               </button>
             </div>
 
             <div class="pannel__inner-body">
+              <!-- Email -->
+              <div class="collapse collapse--expanded">
+                <div class="collapse__header">
+                  <div class="collapse__title">
+                    <svg
+                      width="14"
+                      height="12"
+                      viewBox="0 0 14 12"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M12.6 1.5H7L5.6 0H1.4C0.63 0 0 0.675 0 1.5V10.5C0 11.325 0.63 12 1.4 12H12.6C13.37 12 14 11.325 14 10.5V3C14 2.175 13.37 1.5 12.6 1.5ZM12.6 10.5H1.4V1.5H5.019L6.419 3H12.6V10.5ZM7.987 8.6925L7 9.75L4.2 6.75L7 3.75L7.987 4.8075L6.881 6H9.8V7.5H6.881L7.987 8.6925Z"
+                        fill="black"
+                      />
+                    </svg>
+
+                    <span>Mail Received</span>
+                  </div>
+                  <button type="button" class="collapse__icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_895_1138)">
+                        <path
+                          d="M4.43065 5.33334L8.00065 9.04185L11.5707 5.33334L12.6673 6.47504L8.00065 11.3333L3.33398 6.47504L4.43065 5.33334Z"
+                          fill="#0F172A"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_895_1138">
+                          <rect width="16" height="16" fill="white" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </button>
+                </div>
+                <div class="collapse__content">
+                  <div class="search-mail">
+                    <select name="" id="">
+                      <option value="">Recipient</option>
+                      <option value="">Title</option>
+                    </select>
+                    <input type="text" placeholder="Enter Keywords" />
+                  </div>
+                  <ul class="mail">
+                    <li class="mail-item is-active">
+                      <div class="mail-item__info">
+                        <span>2025-07-24 19:00</span>
+                        <span>홍길동</span>
+                      </div>
+                      <div class="mail-item__header">
+                        <svg
+                          width="14"
+                          height="14"
+                          viewBox="0 0 14 14"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <g clip-path="url(#clip0_1003_2723)">
+                            <path
+                              d="M11.667 2.33331H2.33366C1.69199 2.33331 1.17283 2.85831 1.17283 3.49998L1.16699 10.5C1.16699 11.1416 1.69199 11.6666 2.33366 11.6666H7.00033V10.5H2.33366V4.66665L7.00033 7.58331L11.667 4.66665V7.58331H12.8337V3.49998C12.8337 2.85831 12.3087 2.33331 11.667 2.33331ZM7.00033 6.41665L2.33366 3.49998H11.667L7.00033 6.41665ZM10.1153 12.8333L8.05033 10.7683L8.87283 9.94581L10.1095 11.1825L12.5828 8.70915L13.417 9.53165L10.1153 12.8333Z"
+                              fill="black"
+                            />
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_1003_2723">
+                              <rect width="14" height="14" fill="white" />
+                            </clipPath>
+                          </defs>
+                        </svg>
+
+                        <p class="mail-item__title">
+                          RE:RE:RE:리뉴얼 오픈 관련 미팅 회의록
+                        </p>
+                      </div>
+
+                      <p class="mail-item__cont">
+                        메뉴판 다운로드 경우는 개발기 뷰어 관련 이슈가 있어서
+                        다운로드만 가능한 상태입니다. 해당 부분 소스 바뀐 부분은
+                        없어서 운영기 올라가면 현재창에서 볼 수 있습니다. 운영기
+                        배포 시기는
+                      </p>
+                    </li>
+                    <li class="mail-item">
+                      <div class="mail-item__info">
+                        <span>2025-07-20 09:00</span>
+                        <span>김지우</span>
+                      </div>
+                      <div class="mail-item__header">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="14"
+                          height="15"
+                          viewBox="0 0 14 15"
+                          fill="none"
+                        >
+                          <path
+                            d="M2.33268 12.1666C2.01185 12.1666 1.7372 12.0524 1.50872 11.8239C1.28025 11.5955 1.16602 11.3208 1.16602 11V3.99998C1.16602 3.67915 1.28025 3.40449 1.50872 3.17602C1.7372 2.94755 2.01185 2.83331 2.33268 2.83331H11.666C11.9868 2.83331 12.2615 2.94755 12.49 3.17602C12.7184 3.40449 12.8327 3.67915 12.8327 3.99998V11C12.8327 11.3208 12.7184 11.5955 12.49 11.8239C12.2615 12.0524 11.9868 12.1666 11.666 12.1666H2.33268ZM6.99935 8.08331L2.33268 5.16665V11H11.666V5.16665L6.99935 8.08331ZM6.99935 6.91665L11.666 3.99998H2.33268L6.99935 6.91665ZM2.33268 5.16665V3.99998V11V5.16665Z"
+                            fill="#0F172A"
+                          />
+                        </svg>
+
+                        <p class="mail-item__title">
+                          인력 투입 프로필 작성 요청
+                        </p>
+                      </div>
+
+                      <p class="mail-item__cont">
+                        하기 가이드를 보고 첨부파일의 양식에 맞춰 인력 프로필을
+                        작성해주시기 바랍니다. 급하게 전달 받은 건이라서 최대한
+                        빨리 작성 해주시면 감사드리겠습니다.
+                      </p>
+                    </li>
+                    <li class="mail-item is-read">
+                      <div class="mail-item__info">
+                        <span>2025-07-24 19:00</span>
+                        <span>곽두철</span>
+                      </div>
+                      <div class="mail-item__header">
+                        <svg
+                          width="14"
+                          height="14"
+                          viewBox="0 0 14 14"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <g clip-path="url(#clip0_1003_2723)">
+                            <path
+                              d="M11.667 2.33331H2.33366C1.69199 2.33331 1.17283 2.85831 1.17283 3.49998L1.16699 10.5C1.16699 11.1416 1.69199 11.6666 2.33366 11.6666H7.00033V10.5H2.33366V4.66665L7.00033 7.58331L11.667 4.66665V7.58331H12.8337V3.49998C12.8337 2.85831 12.3087 2.33331 11.667 2.33331ZM7.00033 6.41665L2.33366 3.49998H11.667L7.00033 6.41665ZM10.1153 12.8333L8.05033 10.7683L8.87283 9.94581L10.1095 11.1825L12.5828 8.70915L13.417 9.53165L10.1153 12.8333Z"
+                              fill="black"
+                            />
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_1003_2723">
+                              <rect width="14" height="14" fill="white" />
+                            </clipPath>
+                          </defs>
+                        </svg>
+
+                        <p class="mail-item__title">
+                          RE: [요청]퍼블리싱 테스트 디바이스
+                        </p>
+                      </div>
+
+                      <p class="mail-item__cont">
+                        안녕하세요. 주식회사 곽곽의 대표이사 곽두철입니다. 먼저
+                        요청사항 반영에 즉각적인 대응을 해주시고 적극적인 제안에
+                        감사드립니다. 제시해주신 방법은 내부적으로 검토중이며
+                        결정되는대로 빠른 시일내에 피드백 드리겠습니다. 다만
+                        요청하신
+                      </p>
+                    </li>
+                    <li class="mail-item is-read">
+                      <div class="mail-item__info">
+                        <span>2025-07-24 19:00</span>
+                        <span>홍길동</span>
+                      </div>
+                      <div class="mail-item__header">
+                        <svg
+                          width="14"
+                          height="14"
+                          viewBox="0 0 14 14"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <g clip-path="url(#clip0_1003_2723)">
+                            <path
+                              d="M11.667 2.33331H2.33366C1.69199 2.33331 1.17283 2.85831 1.17283 3.49998L1.16699 10.5C1.16699 11.1416 1.69199 11.6666 2.33366 11.6666H7.00033V10.5H2.33366V4.66665L7.00033 7.58331L11.667 4.66665V7.58331H12.8337V3.49998C12.8337 2.85831 12.3087 2.33331 11.667 2.33331ZM7.00033 6.41665L2.33366 3.49998H11.667L7.00033 6.41665ZM10.1153 12.8333L8.05033 10.7683L8.87283 9.94581L10.1095 11.1825L12.5828 8.70915L13.417 9.53165L10.1153 12.8333Z"
+                              fill="black"
+                            />
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_1003_2723">
+                              <rect width="14" height="14" fill="white" />
+                            </clipPath>
+                          </defs>
+                        </svg>
+                        <p class="mail-item__title">
+                          RE:RE:RE:리뉴얼 오픈 관련 미팅 회의록
+                        </p>
+                      </div>
+                      <p class="mail-item__cont">
+                        메뉴판 다운로드 경우는 개발기 뷰어 관련 이슈가 있어서
+                        다운로드만 가능한 상태입니다. 해당 부분 소스 바뀐 부분은
+                        없어서 운영기 올라가면 현재창에서 볼 수 있습니다. 운영기
+                        배포 시기는
+                      </p>
+                    </li>
+                    <li class="mail-item is-read">
+                      <div class="mail-item__info">
+                        <span>2025-07-24 19:00</span>
+                        <span>홍길동</span>
+                      </div>
+                      <div class="mail-item__header">
+                        <svg
+                          width="14"
+                          height="14"
+                          viewBox="0 0 14 14"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <g clip-path="url(#clip0_1003_2723)">
+                            <path
+                              d="M11.667 2.33331H2.33366C1.69199 2.33331 1.17283 2.85831 1.17283 3.49998L1.16699 10.5C1.16699 11.1416 1.69199 11.6666 2.33366 11.6666H7.00033V10.5H2.33366V4.66665L7.00033 7.58331L11.667 4.66665V7.58331H12.8337V3.49998C12.8337 2.85831 12.3087 2.33331 11.667 2.33331ZM7.00033 6.41665L2.33366 3.49998H11.667L7.00033 6.41665ZM10.1153 12.8333L8.05033 10.7683L8.87283 9.94581L10.1095 11.1825L12.5828 8.70915L13.417 9.53165L10.1153 12.8333Z"
+                              fill="black"
+                            />
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_1003_2723">
+                              <rect width="14" height="14" fill="white" />
+                            </clipPath>
+                          </defs>
+                        </svg>
+                        <p class="mail-item__title">
+                          RE:RE:RE:리뉴얼 오픈 관련 미팅 회의록
+                        </p>
+                      </div>
+                      <p class="mail-item__cont">
+                        메뉴판 다운로드 경우는 개발기 뷰어 관련 이슈가 있어서
+                        다운로드만 가능한 상태입니다. 해당 부분 소스 바뀐 부분은
+                        없어서 운영기 올라가면 현재창에서 볼 수 있습니다. 운영기
+                        배포 시기는
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="collapse collapse--expanded">
+                <div class="collapse__header">
+                  <div class="collapse__title">
+                    <svg
+                      width="14"
+                      height="12"
+                      viewBox="0 0 14 12"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M12.6 1.5H7L5.6 0H1.4C0.63 0 0 0.675 0 1.5V10.5C0 11.325 0.63 12 1.4 12H12.6C13.37 12 14 11.325 14 10.5V3C14 2.175 13.37 1.5 12.6 1.5ZM12.6 10.5H1.4V1.5H5.019L6.006 2.5575L6.419 3H12.6V10.5ZM7.112 6H4.2V7.5H7.112L5.999 8.6925L6.993 9.75L9.8 6.7575L6.993 3.75L6.006 4.8075L7.112 6Z"
+                        fill="black"
+                      />
+                    </svg>
+                    <span>Mail Sent</span>
+                  </div>
+                  <button type="button" class="collapse__icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_895_1138)">
+                        <path
+                          d="M4.43065 5.33334L8.00065 9.04185L11.5707 5.33334L12.6673 6.47504L8.00065 11.3333L3.33398 6.47504L4.43065 5.33334Z"
+                          fill="#0F172A"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_895_1138">
+                          <rect width="16" height="16" fill="white" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </button>
+                </div>
+                <div class="collapse__content">
+                  <div class="search-mail">
+                    <select name="" id="">
+                      <option value="">Recipient</option>
+                      <option value="">Title</option>
+                    </select>
+                    <input type="text" placeholder="Enter Keywords" />
+                  </div>
+                  <ul class="mail">
+                    <li class="mail-item">
+                      <div class="mail-item__info">
+                        <span>2025-07-22 13:03</span>
+                        <span>김태일</span>
+                      </div>
+                      <div class="mail-item__header">
+                        <p class="mail-item__title">
+                          RE:RE:RE:리뉴얼 오픈 관련 미팅 회의록
+                        </p>
+                      </div>
+
+                      <p class="mail-item__cont">
+                        메뉴판 다운로드 경우는 개발기 뷰어 관련 이슈가 있어서
+                        다운로드만 가능한 상태입니다. 해당 부분 소스 바뀐 부분은
+                        없어서 운영기 올라가면 현재창에서 볼 수 있습니다. 운영기
+                        배포 시기는
+                      </p>
+                    </li>
+                    <li class="mail-item">
+                      <div class="mail-item__info">
+                        <span>2025-06-18 12:21</span>
+                        <span>김태일</span>
+                      </div>
+                      <div class="mail-item__header">
+                        <p class="mail-item__title">
+                          RE:RE:LG U + 고객 언어 포털 Kick-off 일정
+                        </p>
+                      </div>
+
+                      <p class="mail-item__cont">
+                        안녕하세요. 김태일 선임입니다. 요청해주신 퍼블리싱
+                        일정을 WBS에 업데이트 하였습니다. 위 일정은 디자인이
+                        완료된 상태에서 진행한다는 전제 하에 작성하였으며 디자인
+                        일정이
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
               <!-- Settings -->
-              <div class="collapse">
+              <!-- <div class="collapse">
                 <div class="collapse__header">
                   <div class="collapse__title">
                     <svg
@@ -541,9 +1004,9 @@
                   </button>
                 </div>
                 <div class="collapse__content">매개변수 추가 필요</div>
-              </div>
+              </div> -->
               <!-- Prompt -->
-              <div class="collapse">
+              <!-- <div class="collapse">
                 <div class="collapse__header">
                   <div class="collapse__title">
                     <svg
@@ -583,11 +1046,9 @@
                   </button>
                 </div>
                 <div class="collapse__content">
-                  <!-- 수정 필요 -->
                   <textarea placeholder="예: 한국어로 응답해줘."></textarea>
-                  <!-- // 수정 필요 -->
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
