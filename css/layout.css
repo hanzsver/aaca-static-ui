@@ -91,6 +91,9 @@
   border-right: 1px solid var(--layout-border-color);
 }
 
+.sidebar__workspace-top {
+  border-bottom: 1px solid var(--layout-border-color);
+}
 .sidebar__workspace-bottom {
   flex: 1;
   display: flex;
@@ -122,7 +125,7 @@
 
 .sidebar__header + .sidebar__menu {
   padding: 8px 0;
-  border-bottom: 1px solid var(--layout-border-color);
+  /* border-bottom: 1px solid var(--layout-border-color); */
 }
 
 .sidebar__menu {
@@ -468,8 +471,7 @@
   width: 180px;
   height: 100px;
   padding: 8px;
-  background: #ffffff;
-  border: 1px solid #babdc4;
+  border: 1px solid #eeeeee;
   border-radius: 6px;
   transition: all 0.2s ease;
   cursor: pointer;
