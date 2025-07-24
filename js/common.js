@@ -11,7 +11,7 @@ function initRightpannel__inner() {
   if (foldButton && main) {
     foldButton.addEventListener("click", function (event) {
       event.preventDefault();
-      main.classList.toggle("pannel__inner-open");
+      main.classList.toggle("pannel-open");
     });
   }
 
@@ -28,7 +28,7 @@ function initRightpannel__inner() {
   const tableSelectionBtn = document.querySelector(".btn-table-selection");
   if (tableSelectionBtn && main) {
     tableSelectionBtn.addEventListener("click", function () {
-      main.classList.add("pannel__inner-open");
+      main.classList.add("pannel-open");
     });
   }
 
