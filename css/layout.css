@@ -894,6 +894,7 @@
 .sidebar__subtitle {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   height: 50px;
   font-size: 12px;
   font-weight: 500;
