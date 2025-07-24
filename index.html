@@ -4,9 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AACA</title>
+    <link rel="icon" href="images/ACCA_Chan.png" type="image/png" />
     <!-- jsdelivr CDN 서버에 미리 연결하여 리소스 로딩을 빠르게 함 -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" />
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/popup.css" />
   </head>
   <body>
     <div class="app">
@@ -53,7 +55,8 @@
             <div class="sidebar__agent-menu">
               <button
                 type="button"
-                class="sidebar__agent-menu-item chat is-active"
+                class="sidebar__agent-menu-item chat"
+                onclick="location.href='chat.html'"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +72,11 @@
                 </svg>
                 <span class="hidden">CHAT</span>
               </button>
-              <button type="button" class="sidebar__agent-menu-item doc">
+              <button
+                type="button"
+                class="sidebar__agent-menu-item doc"
+                onclick="location.href='doc.html'"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="14"
@@ -84,7 +91,11 @@
                 </svg>
                 <span class="hidden">DOC</span>
               </button>
-              <button type="button" class="sidebar__agent-menu-item sql">
+              <button
+                type="button"
+                class="sidebar__agent-menu-item sql"
+                onclick="location.href='sql.html'"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -100,7 +111,11 @@
                 <span class="hidden">SQL</span>
               </button>
             </div>
-            <button type="button" class="btn__icon sidebar__agent-admin">
+            <button
+              type="button"
+              class="btn__icon sidebar__agent-admin"
+              onclick="openPopup()"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="18"
@@ -118,9 +133,9 @@
           </nav>
 
           <div class="sidebar__workspace">
-            <div class="sidebar__header">
-              <h3 class="sidebar__title">Chat</h3>
-              <button type="button" class="sidebar__search">
+            <div class="sidebar__workspace-header">
+              <h3 class="sidebar__workspace-title">AACA</h3>
+              <button type="button" class="sidebar__workspace-search">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="18"
@@ -136,43 +151,11 @@
                 <span class="hidden">Search</span>
               </button>
             </div>
-            <ul class="sidebar__menu">
-              <li>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="14"
-                  height="15"
-                  viewBox="0 0 14 15"
-                  fill="none"
-                >
-                  <path
-                    d="M2.33268 12.1666C2.01185 12.1666 1.7372 12.0524 1.50872 11.8239C1.28025 11.5955 1.16602 11.3208 1.16602 11V3.99998C1.16602 3.67915 1.28025 3.40449 1.50872 3.17602C1.7372 2.94755 2.01185 2.83331 2.33268 2.83331H11.666C11.9868 2.83331 12.2615 2.94755 12.49 3.17602C12.7184 3.40449 12.8327 3.67915 12.8327 3.99998V11C12.8327 11.3208 12.7184 11.5955 12.49 11.8239C12.2615 12.0524 11.9868 12.1666 11.666 12.1666H2.33268ZM6.99935 8.08331L2.33268 5.16665V11H11.666V5.16665L6.99935 8.08331ZM6.99935 6.91665L11.666 3.99998H2.33268L6.99935 6.91665ZM2.33268 5.16665V3.99998V11V5.16665Z"
-                    fill="#0F172A"
-                  />
-                </svg>
-                <span>Email</span>
-              </li>
-              <li>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="14"
-                  height="15"
-                  viewBox="0 0 14 15"
-                  fill="none"
-                >
-                  <path
-                    d="M2.91667 13.3334C2.59583 13.3334 2.32118 13.2191 2.09271 12.9906C1.86424 12.7622 1.75 12.4875 1.75 12.1667V4.00002C1.75 3.67919 1.86424 3.40453 2.09271 3.17606C2.32118 2.94759 2.59583 2.83335 2.91667 2.83335H3.5V1.66669H4.66667V2.83335H9.33333V1.66669H10.5V2.83335H11.0833C11.4042 2.83335 11.6788 2.94759 11.9073 3.17606C12.1358 3.40453 12.25 3.67919 12.25 4.00002V12.1667C12.25 12.4875 12.1358 12.7622 11.9073 12.9906C11.6788 13.2191 11.4042 13.3334 11.0833 13.3334H2.91667ZM2.91667 12.1667H11.0833V6.33335H2.91667V12.1667ZM2.91667 5.16669H11.0833V4.00002H2.91667V5.16669Z"
-                    fill="#0F172A"
-                  />
-                </svg>
-                <span>Calendar</span>
-              </li>
-            </ul>
-            <div class="sidebar__favorites">
+            <div class="sidebar__workspace-favorites">
               <div class="sidebar__subtitle">
                 <span>Favorites</span>
               </div>
-              <ul class="sidebar__menu">
+              <ul class="sidebar__workspace-menu">
                 <li>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -183,7 +166,7 @@
                   >
                     <path
                       d="M2.33268 12.1666C2.01185 12.1666 1.7372 12.0524 1.50872 11.8239C1.28025 11.5955 1.16602 11.3208 1.16602 11V3.99998C1.16602 3.67915 1.28025 3.40449 1.50872 3.17602C1.7372 2.94755 2.01185 2.83331 2.33268 2.83331H11.666C11.9868 2.83331 12.2615 2.94755 12.49 3.17602C12.7184 3.40449 12.8327 3.67915 12.8327 3.99998V11C12.8327 11.3208 12.7184 11.5955 12.49 11.8239C12.2615 12.0524 11.9868 12.1666 11.666 12.1666H2.33268ZM6.99935 8.08331L2.33268 5.16665V11H11.666V5.16665L6.99935 8.08331ZM6.99935 6.91665L11.666 3.99998H2.33268L6.99935 6.91665ZM2.33268 5.16665V3.99998V11V5.16665Z"
-                      fill="#0F172A"
+                      fill="#FACC16"
                     />
                   </svg>
                   <span>6월 28일 이메일 내용 요약</span>
@@ -198,58 +181,200 @@
                   >
                     <path
                       d="M2.91667 13.3334C2.59583 13.3334 2.32118 13.2191 2.09271 12.9906C1.86424 12.7622 1.75 12.4875 1.75 12.1667V4.00002C1.75 3.67919 1.86424 3.40453 2.09271 3.17606C2.32118 2.94759 2.59583 2.83335 2.91667 2.83335H3.5V1.66669H4.66667V2.83335H9.33333V1.66669H10.5V2.83335H11.0833C11.4042 2.83335 11.6788 2.94759 11.9073 3.17606C12.1358 3.40453 12.25 3.67919 12.25 4.00002V12.1667C12.25 12.4875 12.1358 12.7622 11.9073 12.9906C11.6788 13.2191 11.4042 13.3334 11.0833 13.3334H2.91667ZM2.91667 12.1667H11.0833V6.33335H2.91667V12.1667ZM2.91667 5.16669H11.0833V4.00002H2.91667V5.16669Z"
-                      fill="#0F172A"
+                      fill="#FACC16"
                     />
                   </svg>
                   <span>7월 첫째주 일정 리스트업</span>
                 </li>
+                <li>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_906_2898)">
+                      <path
+                        d="M5.34852 3.49998L6.51518 4.66665H11.666V10.5H2.33268V3.49998H5.34852ZM5.83268 2.33331H2.33268C1.69102 2.33331 1.17185 2.85831 1.17185 3.49998L1.16602 10.5C1.16602 11.1416 1.69102 11.6666 2.33268 11.6666H11.666C12.3077 11.6666 12.8327 11.1416 12.8327 10.5V4.66665C12.8327 4.02498 12.3077 3.49998 11.666 3.49998H6.99935L5.83268 2.33331Z"
+                        fill="#4ADE80"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_906_2898">
+                        <rect width="14" height="14" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  <span>ixi enterprise 스퀘어 유입 경로별 전환율</span>
+                </li>
+                <li>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_906_2898)">
+                      <path
+                        d="M5.34852 3.49998L6.51518 4.66665H11.666V10.5H2.33268V3.49998H5.34852ZM5.83268 2.33331H2.33268C1.69102 2.33331 1.17185 2.85831 1.17185 3.49998L1.16602 10.5C1.16602 11.1416 1.69102 11.6666 2.33268 11.6666H11.666C12.3077 11.6666 12.8327 11.1416 12.8327 10.5V4.66665C12.8327 4.02498 12.3077 3.49998 11.666 3.49998H6.99935L5.83268 2.33331Z"
+                        fill="#F87171"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_906_2898">
+                        <rect width="14" height="14" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  <span>소프트웨어 품질의 정의</span>
+                </li>
+                <li>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="15"
+                    viewBox="0 0 14 15"
+                    fill="none"
+                  >
+                    <path
+                      d="M2.91667 13.3334C2.59583 13.3334 2.32118 13.2191 2.09271 12.9906C1.86424 12.7622 1.75 12.4875 1.75 12.1667V4.00002C1.75 3.67919 1.86424 3.40453 2.09271 3.17606C2.32118 2.94759 2.59583 2.83335 2.91667 2.83335H3.5V1.66669H4.66667V2.83335H9.33333V1.66669H10.5V2.83335H11.0833C11.4042 2.83335 11.6788 2.94759 11.9073 3.17606C12.1358 3.40453 12.25 3.67919 12.25 4.00002V12.1667C12.25 12.4875 12.1358 12.7622 11.9073 12.9906C11.6788 13.2191 11.4042 13.3334 11.0833 13.3334H2.91667ZM2.91667 12.1667H11.0833V6.33335H2.91667V12.1667ZM2.91667 5.16669H11.0833V4.00002H2.91667V5.16669Z"
+                      fill="#FACC16"
+                    />
+                  </svg>
+                  <span>LG U+ 고객언어 포털 주간회의 일정</span>
+                </li>
+                <li>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_906_2898)">
+                      <path
+                        d="M5.34852 3.49998L6.51518 4.66665H11.666V10.5H2.33268V3.49998H5.34852ZM5.83268 2.33331H2.33268C1.69102 2.33331 1.17185 2.85831 1.17185 3.49998L1.16602 10.5C1.16602 11.1416 1.69102 11.6666 2.33268 11.6666H11.666C12.3077 11.6666 12.8327 11.1416 12.8327 10.5V4.66665C12.8327 4.02498 12.3077 3.49998 11.666 3.49998H6.99935L5.83268 2.33331Z"
+                        fill="#F87171"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_906_2898">
+                        <rect width="14" height="14" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  <span>사우회 회비 규칙</span>
+                </li>
               </ul>
             </div>
-          </div>
-
-          <div class="sidebar__history">
-            <div class="sidebar__subtitle">
-              <span>Chat History</span>
-            </div>
-            <ul class="sidebar__menu">
-              <li>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="14"
-                  height="15"
-                  viewBox="0 0 14 15"
-                  fill="none"
-                >
-                  <path
-                    d="M6.99935 9.83335C7.46602 9.83335 7.88164 9.69481 8.24622 9.41773C8.61081 9.14065 8.87574 8.78335 9.04102 8.34585H4.95768C5.12296 8.78335 5.38789 9.14065 5.75247 9.41773C6.11706 9.69481 6.53268 9.83335 6.99935 9.83335ZM5.54102 7.50002C5.78407 7.50002 5.99067 7.41495 6.16081 7.24481C6.33095 7.07467 6.41602 6.86808 6.41602 6.62502C6.41602 6.38196 6.33095 6.17537 6.16081 6.00523C5.99067 5.83509 5.78407 5.75002 5.54102 5.75002C5.29796 5.75002 5.09136 5.83509 4.92122 6.00523C4.75108 6.17537 4.66602 6.38196 4.66602 6.62502C4.66602 6.86808 4.75108 7.07467 4.92122 7.24481C5.09136 7.41495 5.29796 7.50002 5.54102 7.50002ZM8.45768 7.50002C8.70074 7.50002 8.90733 7.41495 9.07747 7.24481C9.24761 7.07467 9.33268 6.86808 9.33268 6.62502C9.33268 6.38196 9.24761 6.17537 9.07747 6.00523C8.90733 5.83509 8.70074 5.75002 8.45768 5.75002C8.21463 5.75002 8.00803 5.83509 7.83789 6.00523C7.66775 6.17537 7.58268 6.38196 7.58268 6.62502C7.58268 6.86808 7.66775 7.07467 7.83789 7.24481C8.00803 7.41495 8.21463 7.50002 8.45768 7.50002ZM4.44727 4.23335L6.0806 2.11877C6.19727 1.96321 6.33581 1.84898 6.49622 1.77606C6.65664 1.70315 6.82435 1.66669 6.99935 1.66669C7.17435 1.66669 7.34206 1.70315 7.50247 1.77606C7.66289 1.84898 7.80143 1.96321 7.9181 2.11877L9.55143 4.23335L12.0306 5.0646C12.2834 5.14238 12.4827 5.28578 12.6285 5.49481C12.7743 5.70384 12.8473 5.93474 12.8473 6.18752C12.8473 6.30419 12.8303 6.42085 12.7962 6.53752C12.7622 6.65419 12.7063 6.76599 12.6285 6.87294L11.0243 9.14794L11.0827 11.5396C11.0924 11.8799 10.9806 12.1667 10.7473 12.4C10.5139 12.6334 10.2417 12.75 9.9306 12.75C9.91115 12.75 9.80421 12.7354 9.60977 12.7063L6.99935 11.9771L4.38893 12.7063C4.34032 12.7257 4.28685 12.7379 4.22852 12.7427C4.17018 12.7476 4.11671 12.75 4.0681 12.75C3.75699 12.75 3.48477 12.6334 3.25143 12.4C3.0181 12.1667 2.90629 11.8799 2.91602 11.5396L2.97435 9.13335L1.38477 6.87294C1.30699 6.76599 1.25109 6.65419 1.21706 6.53752C1.18303 6.42085 1.16602 6.30419 1.16602 6.18752C1.16602 5.94446 1.2365 5.71842 1.37747 5.5094C1.51845 5.30037 1.71532 5.1521 1.9681 5.0646L4.44727 4.23335Z"
-                    fill="#FFD700"
-                  />
-                </svg>
-                <span>6월 28일 이메일 내용 요약</span>
-              </li>
-              <li>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="14"
-                  height="15"
-                  viewBox="0 0 14 15"
-                  fill="none"
-                >
-                  <path
-                    d="M6.99935 9.83335C7.46602 9.83335 7.88164 9.69481 8.24622 9.41773C8.61081 9.14065 8.87574 8.78335 9.04102 8.34585H4.95768C5.12296 8.78335 5.38789 9.14065 5.75247 9.41773C6.11706 9.69481 6.53268 9.83335 6.99935 9.83335ZM5.54102 7.50002C5.78407 7.50002 5.99067 7.41495 6.16081 7.24481C6.33095 7.07467 6.41602 6.86808 6.41602 6.62502C6.41602 6.38196 6.33095 6.17537 6.16081 6.00523C5.99067 5.83509 5.78407 5.75002 5.54102 5.75002C5.29796 5.75002 5.09136 5.83509 4.92122 6.00523C4.75108 6.17537 4.66602 6.38196 4.66602 6.62502C4.66602 6.86808 4.75108 7.07467 4.92122 7.24481C5.09136 7.41495 5.29796 7.50002 5.54102 7.50002ZM8.45768 7.50002C8.70074 7.50002 8.90733 7.41495 9.07747 7.24481C9.24761 7.07467 9.33268 6.86808 9.33268 6.62502C9.33268 6.38196 9.24761 6.17537 9.07747 6.00523C8.90733 5.83509 8.70074 5.75002 8.45768 5.75002C8.21463 5.75002 8.00803 5.83509 7.83789 6.00523C7.66775 6.17537 7.58268 6.38196 7.58268 6.62502C7.58268 6.86808 7.66775 7.07467 7.83789 7.24481C8.00803 7.41495 8.21463 7.50002 8.45768 7.50002ZM4.44727 4.23335L6.0806 2.11877C6.19727 1.96321 6.33581 1.84898 6.49622 1.77606C6.65664 1.70315 6.82435 1.66669 6.99935 1.66669C7.17435 1.66669 7.34206 1.70315 7.50247 1.77606C7.66289 1.84898 7.80143 1.96321 7.9181 2.11877L9.55143 4.23335L12.0306 5.0646C12.2834 5.14238 12.4827 5.28578 12.6285 5.49481C12.7743 5.70384 12.8473 5.93474 12.8473 6.18752C12.8473 6.30419 12.8303 6.42085 12.7962 6.53752C12.7622 6.65419 12.7063 6.76599 12.6285 6.87294L11.0243 9.14794L11.0827 11.5396C11.0924 11.8799 10.9806 12.1667 10.7473 12.4C10.5139 12.6334 10.2417 12.75 9.9306 12.75C9.91115 12.75 9.80421 12.7354 9.60977 12.7063L6.99935 11.9771L4.38893 12.7063C4.34032 12.7257 4.28685 12.7379 4.22852 12.7427C4.17018 12.7476 4.11671 12.75 4.0681 12.75C3.75699 12.75 3.48477 12.6334 3.25143 12.4C3.0181 12.1667 2.90629 11.8799 2.91602 11.5396L2.97435 9.13335L1.38477 6.87294C1.30699 6.76599 1.25109 6.65419 1.21706 6.53752C1.18303 6.42085 1.16602 6.30419 1.16602 6.18752C1.16602 5.94446 1.2365 5.71842 1.37747 5.5094C1.51845 5.30037 1.71532 5.1521 1.9681 5.0646L4.44727 4.23335Z"
-                    fill="#FFD700"
-                  />
-                </svg>
-                <span>7월 첫째주 일정 리스트업</span>
-              </li>
-            </ul>
           </div>
         </aside>
 
         <!-- Content -->
         <div class="content">
           <div class="chat-container">
-            <div class="chat-container__history"></div>
+            <div class="chat-container__history">
+              <div class="chat-container__intro">
+                <svg
+                  width="144"
+                  height="88"
+                  viewBox="0 0 144 88"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M58.5367 37.6982H63.6478V33.5473H66.0734V43.9586H71.4444V39.7396H76.6422V43.9586H81.8399V33.5473H84.2655V37.6982H89.3766V33.5473H92.0621V39.8077H84.2655V46H63.6478V39.8077H55.8512V33.5473H58.5367V37.6982Z"
+                    fill="#0F100E"
+                  />
+                  <path
+                    d="M61.1356 33.5473H58.5367V31.5059H61.1356V33.5473Z"
+                    fill="#0F100E"
+                  />
+                  <path
+                    d="M89.3766 33.5473H86.7778V31.5059H89.3766V33.5473Z"
+                    fill="#0F100E"
+                  />
+                  <path
+                    d="M86.7778 31.5059H61.1356V29.4645H86.7778V31.5059Z"
+                    fill="#0F100E"
+                  />
+                  <path
+                    d="M61.1356 12.0444H58.6234V27.4231H61.1356V29.4645H58.5367V27.4231H55.9379V23.3402H51V17.284H55.9379V11.9763H58.6234V10.003H61.1356V12.0444Z"
+                    fill="#0F100E"
+                  />
+                  <path
+                    d="M89.3766 29.4645H86.7778V27.4231H89.3766V29.4645Z"
+                    fill="#0F100E"
+                  />
+                  <path
+                    d="M89.3766 11.9763H92.0621V17.284H97V23.3402H92.0621V27.4231H89.3766V12.0444H86.8644V10.003H89.3766V11.9763Z"
+                    fill="#0F100E"
+                  />
+                  <path
+                    d="M79.2411 25.4497H68.6723V23.3402H79.2411V25.4497Z"
+                    fill="#0F100E"
+                  />
+                  <path
+                    d="M68.6723 21.3669H66.0734V17.284H68.6723V21.3669Z"
+                    fill="#0F100E"
+                  />
+                  <path
+                    d="M81.8399 21.3669H79.2411V17.284H81.8399V21.3669Z"
+                    fill="#0F100E"
+                  />
+                  <path
+                    d="M76.7288 3.8787H75.1695V8.02959H86.8644V10.003H61.1356V8.02959H72.7439V3.8787H71.3578V0H76.7288V3.8787Z"
+                    fill="#0F100E"
+                  />
+                  <path
+                    d="M10 84V64H14V60H18V56H30V60H34V64H38V84H30V76H18V84H10ZM18 72H30V64H26V60H22V64H18V72ZM42 84V64H46V60H50V56H62V60H66V64H70V84H62V76H50V84H42ZM50 72H62V64H58V60H54V64H50V72ZM82 84V80H78V76H74V64H78V60H82V56H98V60H102V64H94V60H86V64H82V76H86V80H94V76H102V80H98V84H82ZM106 84V64H110V60H114V56H126V60H130V64H134V84H126V76H114V84H106ZM114 72H126V64H122V60H118V64H114V72Z"
+                    fill="black"
+                  />
+                </svg>
+                <ul class="chat-container__intro-list">
+                  <li class="chat-container__intro-item">
+                    <span class="intro-item__chip">Calendar</span>
+                    <p class="intro-item__content">"다음주 회의 일정 알려줘"</p>
+                  </li>
+                  <li class="chat-container__intro-item">
+                    <span class="intro-item__chip chip--green"
+                      >Meetings Notes</span
+                    >
+                    <p class="intro-item__content">
+                      “프로젝트 킥오프 회의록을 찾아줘."
+                    </p>
+                  </li>
+                  <li class="chat-container__intro-item">
+                    <span class="intro-item__chip">Email</span>
+                    <p class="intro-item__content">
+                      “받은 이메일을 간단히 요약해줘"
+                    </p>
+                  </li>
+                  <li class="chat-container__intro-item">
+                    <span class="intro-item__chip chip--green"
+                      >Company Club</span
+                    >
+                    <p class="intro-item__content">
+                      “사우회비 사용 내역을 확인하고싶어요"
+                    </p>
+                  </li>
+                  <li class="chat-container__intro-item">
+                    <span class="intro-item__chip chip--red">SQL</span>
+                    <p class="intro-item__content">
+                      “매출 데이터 조회 쿼리를 알려주세요"
+                    </p>
+                  </li>
+                  <li class="chat-container__intro-item">
+                    <span class="intro-item__chip chip--red">Vector DB</span>
+                    <p class="intro-item__content">
+                      “QA 프로세스 문서를 찾아줘"
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
 
             <div class="chat-input">
               <div class="chat-input__input">
@@ -412,8 +537,141 @@
           </div>
         </div>
       </main>
+
+      <!-- Admin Popup -->
+      <div id="popup" class="popup-overlay" onclick="backgroundClick(event)">
+        <!-- 팝업 박스 -->
+        <div class="popup admin-popup">
+          <!-- 팝업 헤더 -->
+          <div class="popup-header">
+            <h2 class="popup-header__title">ADMIN SETTING</h2>
+            <button
+              type="button"
+              class="popup-header__close"
+              onclick="closePopup()"
+            >
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 14 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_628_2710)">
+                  <path
+                    d="M11.0837 3.73925L10.2612 2.91675L7.00033 6.17758L3.73949 2.91675L2.91699 3.73925L6.17783 7.00008L2.91699 10.2609L3.73949 11.0834L7.00033 7.82258L10.2612 11.0834L11.0837 10.2609L7.82283 7.00008L11.0837 3.73925Z"
+                    fill="#1A1A1A"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_628_2710">
+                    <rect width="14" height="14" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </button>
+          </div>
+
+          <!-- 팝업 컨텐츠 -->
+          <div class="popup-content">
+            <!-- 팝업 컨텐츠 네비 -->
+            <nav class="popup-content__nav">
+              <ul class="popup-content__nav-list">
+                <li
+                  class="popup-content__nav-item popup-content__nav-item--active"
+                >
+                  User
+                </li>
+                <li class="popup-content__nav-item">Prompt</li>
+                <li class="popup-content__nav-item">Vector DB</li>
+              </ul>
+            </nav>
+
+            <!-- 팝업 컨텐츠 메인 -->
+            <div class="popup-content__main">
+              <!-- 팝업 컨텐츠 바디 -->
+              <div class="popup-content__body">
+                <!-- 테이블 -->
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>
+                        <!-- 체크박스 스타일 확인 필요 -->
+                        <label class="pannel__inner__checkbox-item">
+                          <input type="checkbox" />
+                        </label>
+                      </th>
+                      <th>Name</th>
+                      <th>Email</th>
+                      <th>Department</th>
+                      <th>Permission</th>
+                      <th>Join Date</th>
+                      <th>Last Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <!-- 체크박스 스타일 확인 필요 -->
+                        <label class="pannel__inner__checkbox-item">
+                          <input type="checkbox" />
+                        </label>
+                      </td>
+                      <td>김대표</td>
+                      <td>ceo@company.com</td>
+                      <td>UX STUDIO 팀</td>
+                      <td>Admin</td>
+                      <td>2024-06-03 09:15</td>
+                      <td>2024-06-03 09:15</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <!-- 체크박스 스타일 확인 필요 -->
+                        <label class="pannel__inner__checkbox-item">
+                          <input type="checkbox" />
+                        </label>
+                      </td>
+                      <td>김대표</td>
+                      <td>ceo@company.com</td>
+                      <td>UX STUDIO 팀</td>
+                      <td>Member</td>
+                      <td>2024-06-05 14:30</td>
+                      <td>2024-06-05 14:30</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <!-- 체크박스 스타일 확인 필요 -->
+                        <label class="pannel__inner__checkbox-item">
+                          <input type="checkbox" />
+                        </label>
+                      </td>
+                      <td>박고객</td>
+                      <td>client@partner.co.kr</td>
+                      <td>UX STUDIO 팀</td>
+                      <td>Master</td>
+                      <td>2024-06-02 11:45</td>
+                      <td>2024-06-02 11:45</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- 팝업 컨텐츠 풋터 -->
+              <div class="popup-content__footer">
+                <button type="button" class="btn btn--tertiary btn--lg">
+                  Cancle
+                </button>
+                <button type="button" class="btn btn--primary btn--lg">
+                  Save
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="js/common.js"></script>
+    <script src="js/popup.js"></script>
+    <script></script>
   </body>
 </html>
