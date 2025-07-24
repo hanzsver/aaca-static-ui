@@ -15,7 +15,11 @@
       <!-- Header -->
       <header class="header">
         <div class="header__inner">
-          <button type="button" class="btn__icon btn__icon setting" onclick="openUserSettingPopup()">
+          <button
+            type="button"
+            class="btn__icon btn__icon setting"
+            onclick="openUserSettingPopup()"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="17"
@@ -286,47 +290,47 @@
                 >
                   <path
                     d="M58.5367 37.6982H63.6478V33.5473H66.0734V43.9586H71.4444V39.7396H76.6422V43.9586H81.8399V33.5473H84.2655V37.6982H89.3766V33.5473H92.0621V39.8077H84.2655V46H63.6478V39.8077H55.8512V33.5473H58.5367V37.6982Z"
-                    fill="#0F100E"
+                    fill="#eb6129"
                   />
                   <path
                     d="M61.1356 33.5473H58.5367V31.5059H61.1356V33.5473Z"
-                    fill="#0F100E"
+                    fill="#eb6129"
                   />
                   <path
                     d="M89.3766 33.5473H86.7778V31.5059H89.3766V33.5473Z"
-                    fill="#0F100E"
+                    fill="#eb6129"
                   />
                   <path
                     d="M86.7778 31.5059H61.1356V29.4645H86.7778V31.5059Z"
-                    fill="#0F100E"
+                    fill="#eb6129"
                   />
                   <path
                     d="M61.1356 12.0444H58.6234V27.4231H61.1356V29.4645H58.5367V27.4231H55.9379V23.3402H51V17.284H55.9379V11.9763H58.6234V10.003H61.1356V12.0444Z"
-                    fill="#0F100E"
+                    fill="#eb6129"
                   />
                   <path
                     d="M89.3766 29.4645H86.7778V27.4231H89.3766V29.4645Z"
-                    fill="#0F100E"
+                    fill="#eb6129"
                   />
                   <path
                     d="M89.3766 11.9763H92.0621V17.284H97V23.3402H92.0621V27.4231H89.3766V12.0444H86.8644V10.003H89.3766V11.9763Z"
-                    fill="#0F100E"
+                    fill="#eb6129"
                   />
                   <path
                     d="M79.2411 25.4497H68.6723V23.3402H79.2411V25.4497Z"
-                    fill="#0F100E"
+                    fill="#eb6129"
                   />
                   <path
                     d="M68.6723 21.3669H66.0734V17.284H68.6723V21.3669Z"
-                    fill="#0F100E"
+                    fill="#eb6129"
                   />
                   <path
                     d="M81.8399 21.3669H79.2411V17.284H81.8399V21.3669Z"
-                    fill="#0F100E"
+                    fill="#eb6129"
                   />
                   <path
                     d="M76.7288 3.8787H75.1695V8.02959H86.8644V10.003H61.1356V8.02959H72.7439V3.8787H71.3578V0H76.7288V3.8787Z"
-                    fill="#0F100E"
+                    fill="#eb6129"
                   />
                   <path
                     d="M10 84V64H14V60H18V56H30V60H34V64H38V84H30V76H18V84H10ZM18 72H30V64H26V60H22V64H18V72ZM42 84V64H46V60H50V56H62V60H66V64H70V84H62V76H50V84H42ZM50 72H62V64H58V60H54V64H50V72ZM82 84V80H78V76H74V64H78V60H82V56H98V60H102V64H94V60H86V64H82V76H86V80H94V76H102V80H98V84H82ZM106 84V64H110V60H114V56H126V60H130V64H134V84H126V76H114V84H106ZM114 72H126V64H122V60H118V64H114V72Z"
@@ -669,9 +673,12 @@
         </div>
       </div>
 
-
       <!-- User Setting Popup -->
-      <div id="user-setting-popup" class="popup-overlay" onclick="backgroundClick(event)">
+      <div
+        id="user-setting-popup"
+        class="popup-overlay"
+        onclick="backgroundClick(event)"
+      >
         <!-- 팝업 박스 -->
         <div class="popup setting-popup">
           <!-- 팝업 헤더 -->
@@ -714,9 +721,20 @@
                   <p class="form-box__title">Profile</p>
                   <div class="setting-popup__profile">
                     <div>
-                      <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <rect width="50" height="50" rx="25" fill="#D3D2D3"/>
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M25.0001 23.6353C28.2801 23.6353 30.939 20.9274 30.939 17.587C30.939 14.2465 28.2801 11.5386 25.0001 11.5386C21.7201 11.5386 19.0612 14.2465 19.0612 17.587C19.0612 20.9274 21.7201 23.6353 25.0001 23.6353ZM19.4571 25.2483C15.0838 25.2483 11.5386 28.8589 11.5386 33.3128V34.9257C11.5386 35.8165 12.2476 36.5386 13.1223 36.5386H36.8779C37.7526 36.5386 38.4617 35.8165 38.4617 34.9257V33.3128C38.4617 28.8589 34.9164 25.2483 30.5431 25.2483H19.4571Z" fill="white"/>
+                      <svg
+                        width="50"
+                        height="50"
+                        viewBox="0 0 50 50"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect width="50" height="50" rx="25" fill="#D3D2D3" />
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M25.0001 23.6353C28.2801 23.6353 30.939 20.9274 30.939 17.587C30.939 14.2465 28.2801 11.5386 25.0001 11.5386C21.7201 11.5386 19.0612 14.2465 19.0612 17.587C19.0612 20.9274 21.7201 23.6353 25.0001 23.6353ZM19.4571 25.2483C15.0838 25.2483 11.5386 28.8589 11.5386 33.3128V34.9257C11.5386 35.8165 12.2476 36.5386 13.1223 36.5386H36.8779C37.7526 36.5386 38.4617 35.8165 38.4617 34.9257V33.3128C38.4617 28.8589 34.9164 25.2483 30.5431 25.2483H19.4571Z"
+                          fill="white"
+                        />
                       </svg>
                       <div class="setting-popup__profile-info">
                         <div class="setting-popup__profile-name">
@@ -729,8 +747,17 @@
                     </div>
                     <!-- 버튼 line으로 변경 필요 -->
                     <button type="button" class="btn btn--sm btn--tertiary">
-                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M10.8889 3.88889L9.79222 4.98556L11.0211 6.22222H4.66667V7.77778H11.0211L9.79222 9.00667L10.8889 10.1111L14 7L10.8889 3.88889ZM1.55556 1.55556H7V0H1.55556C0.7 0 0 0.7 0 1.55556V12.4444C0 13.3 0.7 14 1.55556 14H7V12.4444H1.55556V1.55556Z" fill="#252C3D"/>
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M10.8889 3.88889L9.79222 4.98556L11.0211 6.22222H4.66667V7.77778H11.0211L9.79222 9.00667L10.8889 10.1111L14 7L10.8889 3.88889ZM1.55556 1.55556H7V0H1.55556C0.7 0 0 0.7 0 1.55556V12.4444C0 13.3 0.7 14 1.55556 14H7V12.4444H1.55556V1.55556Z"
+                          fill="#252C3D"
+                        />
                       </svg>
                       <span>Sign Out</span>
                     </button>
@@ -749,39 +776,73 @@
 
                 <div class="form-box">
                   <p class="form-box__title">Intergration</p>
-                  <p class="form-box__desc">Connect with your favorite productivity tools</p>
+                  <p class="form-box__desc">
+                    Connect with your favorite productivity tools
+                  </p>
                   <div class="setting-popup__inter">
                     <div>
                       <em>
-                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clip-path="url(#clip0_631_6534)">
-                        <path d="M16.5 4.5C16.5 3.675 15.825 3 15 3H3C2.175 3 1.5 3.675 1.5 4.5V13.5C1.5 14.325 2.175 15 3 15H15C15.825 15 16.5 14.325 16.5 13.5V4.5ZM15 4.5L9 8.25L3 4.5H15ZM15 13.5H3V6L9 9.75L15 6V13.5Z" fill="#0F172A"/>
-                        </g>
-                        <defs>
-                        <clipPath id="clip0_631_6534">
-                        <rect width="18" height="18" fill="white"/>
-                        </clipPath>
-                        </defs>
+                        <svg
+                          width="18"
+                          height="18"
+                          viewBox="0 0 18 18"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <g clip-path="url(#clip0_631_6534)">
+                            <path
+                              d="M16.5 4.5C16.5 3.675 15.825 3 15 3H3C2.175 3 1.5 3.675 1.5 4.5V13.5C1.5 14.325 2.175 15 3 15H15C15.825 15 16.5 14.325 16.5 13.5V4.5ZM15 4.5L9 8.25L3 4.5H15ZM15 13.5H3V6L9 9.75L15 6V13.5Z"
+                              fill="#0F172A"
+                            />
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_631_6534">
+                              <rect width="18" height="18" fill="white" />
+                            </clipPath>
+                          </defs>
                         </svg>
                         <span>email</span>
                       </em>
-                      <span class="setting-popup__inter-desc">Supports Outlook, Gmail</span>
+                      <span class="setting-popup__inter-desc"
+                        >Supports Outlook, Gmail</span
+                      >
                     </div>
-                      <span class="setting-popup__inter-status setting-popup__inter--error">Not Connected</span>
-                      <button type="button" class="btn btn--sm btn--tertiary">Connect</button>
+                    <span
+                      class="setting-popup__inter-status setting-popup__inter--error"
+                      >Not Connected</span
+                    >
+                    <button type="button" class="btn btn--sm btn--tertiary">
+                      Connect
+                    </button>
                   </div>
                   <div class="setting-popup__inter">
                     <div>
                       <em>
-                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3.75 16.5C3.3375 16.5 2.98425 16.3533 2.69025 16.0597C2.39675 15.7657 2.25 15.4125 2.25 15V4.5C2.25 4.0875 2.39675 3.7345 2.69025 3.441C2.98425 3.147 3.3375 3 3.75 3H4.5V1.5H6V3H12V1.5H13.5V3H14.25C14.6625 3 15.0157 3.147 15.3097 3.441C15.6033 3.7345 15.75 4.0875 15.75 4.5V15C15.75 15.4125 15.6033 15.7657 15.3097 16.0597C15.0157 16.3533 14.6625 16.5 14.25 16.5H3.75ZM3.75 15H14.25V7.5H3.75V15ZM3.75 6H14.25V4.5H3.75V6Z" fill="black"/>
+                        <svg
+                          width="18"
+                          height="18"
+                          viewBox="0 0 18 18"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M3.75 16.5C3.3375 16.5 2.98425 16.3533 2.69025 16.0597C2.39675 15.7657 2.25 15.4125 2.25 15V4.5C2.25 4.0875 2.39675 3.7345 2.69025 3.441C2.98425 3.147 3.3375 3 3.75 3H4.5V1.5H6V3H12V1.5H13.5V3H14.25C14.6625 3 15.0157 3.147 15.3097 3.441C15.6033 3.7345 15.75 4.0875 15.75 4.5V15C15.75 15.4125 15.6033 15.7657 15.3097 16.0597C15.0157 16.3533 14.6625 16.5 14.25 16.5H3.75ZM3.75 15H14.25V7.5H3.75V15ZM3.75 6H14.25V4.5H3.75V6Z"
+                            fill="black"
+                          />
                         </svg>
                         <span>Calendar</span>
                       </em>
-                      <span class="setting-popup__inter-desc">Supports Google Calendar</span>
+                      <span class="setting-popup__inter-desc"
+                        >Supports Google Calendar</span
+                      >
                     </div>
-                      <span class="setting-popup__inter-status setting-popup__inter--complete">Connected</span>
-                      <button type="button" class="btn btn--sm btn--tertiary">Change Settings</button>
+                    <span
+                      class="setting-popup__inter-status setting-popup__inter--complete"
+                      >Connected</span
+                    >
+                    <button type="button" class="btn btn--sm btn--tertiary">
+                      Change Settings
+                    </button>
                   </div>
                 </div>
               </div>
