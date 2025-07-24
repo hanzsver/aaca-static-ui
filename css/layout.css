@@ -190,6 +190,18 @@
   max-height: 100%;
 }
 
+.sidebar__menu li:hover .sidebar__popover-btn {
+  display: flex;
+}
+
+.sidebar__popover-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+}
+
 /* ========================================
   Content
 ======================================== */
