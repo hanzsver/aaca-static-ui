@@ -38,12 +38,18 @@
   border-radius: 4px;
 }
 
+.form-box+.form-box {
+  margin-top: 20px;
+}
+
 .form-box__title {
+  margin-bottom: 8px;
   font-size: 17px;
   font-weight: 700;
   color: var(--color-primary);
 }
 .form-box__desc {
+  margin-bottom: 5px;
   font-size: 14px;
   color: #797D86;
 }
@@ -51,8 +57,10 @@
 /* Textfield */
 select:not(.dropdown--ghost),input[type="text"] {
   flex: 1;
+  background-color: var(--color-white);
   border: 1px solid var(--textfield-border-color);
   border-radius: 6px;
+  font-size: 12px;
 }
 select:focus,input[type="text"]:focus {
   border-color: var(--color-primary);
@@ -70,15 +78,15 @@ input::placeholder, select:required:invalid {
 }
 
 .textfield--sm {
-  height: var(var(--form-height-sm));
+  height: var(--form-height-sm);
   padding: 5px 12px;
 }
 .textfield--md {
-  height: var(var(--form-height-md));
+  height: var(--form-height-md);
   padding: 5px 12px;
 }
-.textfield--md {
-  height: var(var(--form-height-lg));
+.textfield--lg {
+  height: var(--form-height-lg);
   padding: 8px 12px;
 }
 
