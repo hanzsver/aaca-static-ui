@@ -8,6 +8,7 @@
     <!-- jsdelivr CDN 서버에 미리 연결하여 리소스 로딩을 빠르게 함 -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" />
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/popup.css" />
   </head>
   <body>
     <div class="app">
@@ -507,7 +508,7 @@
                   placeholder="Type a message and press Enter to send..."
                 ></textarea>
                 <div class="chat-input__util">
-                  <button type="button" class="chat-input__file-btn">
+                  <button type="button" class="chat-input__file-btn" onclick="openPopup()">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="21"
@@ -662,8 +663,109 @@
           </div>
         </div>
       </main>
+
+            <!-- File Upload Popup -->
+      <div id="popup" class="popup-overlay" onclick="backgroundClick(event)">
+        <!-- 팝업 박스 -->
+        <div class="popup">
+          <!-- 팝업 헤더 -->
+          <div class="popup-header">
+            <h2 class="popup-header__title">File Upload</h2>
+            <button
+              type="button"
+              class="popup-header__close"
+              onclick="closePopup()"
+            >
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 14 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_628_2710)">
+                  <path
+                    d="M11.0837 3.73925L10.2612 2.91675L7.00033 6.17758L3.73949 2.91675L2.91699 3.73925L6.17783 7.00008L2.91699 10.2609L3.73949 11.0834L7.00033 7.82258L10.2612 11.0834L11.0837 10.2609L7.82283 7.00008L11.0837 3.73925Z"
+                    fill="#1A1A1A"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_628_2710">
+                    <rect width="14" height="14" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </button>
+          </div>
+
+          <!-- 팝업 컨텐츠 -->
+          <div class="popup-content">
+            <!-- 팝업 컨텐츠 메인 -->
+            <div class="popup-content__main">
+              <!-- 팝업 컨텐츠 바디 -->
+              <div class="popup-content__body">
+                <form class="form">
+                  <div>
+                    <div class="form__item">
+                      <label for="slider" class="form__label">File</label>
+                      <input type="file" id="upload-file" hidden />
+                      <button type="button" onclick="document.getElementById('upload-file').click()" class="btn btn--sm btn--secondary">Search</button>
+                    </div>
+                    <p class="form__desc">
+                      첨부 가능 파일: 아래한글, 엑셀, 이미지, PDF, 파워포인트
+                      (최대 1개, 파일당 200MB 이하)</p>
+                  </div>
+                  <div class="form__item">
+                    <label for="file-name" class="form__label is-required">Name</label>
+                    <input type="text" id="file-name" placeholder="파일 이름을 생성해주세요" class="textfield--md">
+                  </div>
+                  <div class="form__item">
+                    <label for="file-type" class="form__label is-required">Type</label>
+                    <select id="file-type" required class="textfield--md">
+                      <option value="" disabled selected>Choose type</option>
+                      <option value="company-club">Compamy Club</option>
+                      <option value="meeting-notes">Meeting Notes</option>
+                      <option value="software-quality">Software Quality</option>
+                      <option value="receipt">Receipt</option>
+                    </select>
+                  </div>
+
+                  <p class="form__title">Text processing method</p>
+                  <div class="form__item">
+                    <label for="file-type" class="form__label">Text splitting method</label>
+                    <select id="file-type" required class="textfield--md">
+                      <option value="company-club">문자 수</option>
+                      <option value="meeting-notes">단순 문자 분할</option>
+                      <option value="software-quality">토큰 기반</option>
+                      <option value="receipt">헤더 기반</option>
+                    </select>
+                  </div>
+                  <div class="form__item">
+                    <label for="slider" class="form__label">Chunk size</label>
+                    <input type="range" id="slider" min="0" max="1000" value="500" />
+                  </div>
+                  <div class="form__item">
+                    <label for="slider" class="form__label">Overlap size</label>
+                    <input type="range" id="slider" min="0" max="100" value="50" />
+                  </div>
+                </form>
+              </div>
+              <!-- 팝업 컨텐츠 풋터 -->
+              <div class="popup-content__footer">
+                <button type="button" class="btn btn--tertiary btn--lg">
+                  Cancle
+                </button>
+                <button type="button" class="btn btn--primary btn--lg">
+                  Upload
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="js/common.js"></script>
+    <script src="js/popup.js"></script>
   </body>
 </html>

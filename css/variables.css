@@ -31,6 +31,12 @@
 }
 
 :root {
+  --form-height-sm: 24px;
+  --form-height-md: 26px;
+  --form-height-lg: 30px;
+}
+
+:root {
   /* ETC */
   --disabled-opacity: 0.5;
 }
