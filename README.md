@@ -6,20 +6,26 @@ HTML, CSS, JavaScript를 사용한 컴포넌트화를 최소화한 정적 웹사
 
 ```
 aaca-static-ui/
-├── login.html          # 로그인 페이지
-├── index.html          # 메인 페이지
-├── chat.html           # CHAT 카테고리 페이지
-├── doc.html            # DOC 카테고리 페이지
-├── sql.html            # SQL 카테고리 페이지
-├── css/                # 페이지 스타일
-├── js/                 # 페이지 JavaScript
-├── images/             # 이미지 파일 저장소
-└── assets/             # 기타 자원 저장소
+│   ├── chat/
+│   │   └── index.html        # CHAT 카테고리 상세 페이지
+│   ├── doc/
+│   │   └── index.html        # DOC 카테고리 상세 페이지
+│   └── sql/
+│       └── index.html        # SQL 카테고리 상세 페이지
+├── assets/                   # 정적 자원(공통)
+│   ├── css/
+│   │   ├── main.css
+│   │   └── popup.css
+│   ├── js/
+│   │   ├── common.js
+│   │   └── popup.js
+│   └── images/               # 이미지 파일 저장소
+└── README.md                 # 프로젝트 설명 파일
 ```
 
 ## 🚀 사용 방법
 
-**파일 열기**: `index.html` 파일을 웹브라우저에서 열어보세요.
+**파일 열기**: `pages/index.html` 파일을 웹브라우저에서 열어보세요.
 
 ## 🔧 확장 방법
 
